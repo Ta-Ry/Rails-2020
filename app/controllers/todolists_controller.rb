@@ -9,9 +9,18 @@ class TodolistsController < ApplicationController
   	list = List.new(list_params)
   	#DBへの保存
   	list.save
-  	#トップ画面のリダイレクト
-  	redirect_to "/top"
+  	#詳細画面へリダイレクト
+  	redirect_to todolist_path(list.id)
   end
+#以下def~privateは6章で追加
+  def index
+  	@lists = List.all
+  end
+
+  def show
+  	@list = List.find(params[:id])
+  end
+
   private
 
   def list_params
