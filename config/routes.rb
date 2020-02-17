@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get "todolists/:id" => "todolists#show", as: "todolist"
   # .../todolists/1 や .../todolists/3 に該当する
+
+  #7章の始まり
 end
